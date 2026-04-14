@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hello', # Lab 2 - Add the hello app to the list of installed apps
 ]
 
 MIDDLEWARE = [
@@ -115,3 +116,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static_collected' # Lab 2 - Define STATIC_ROOT to specify the directory where static files will be collected during deployment
