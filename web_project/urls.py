@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns # Lab 2 - Import staticfiles_urlpatterns to serve static files during development
 
 urlpatterns = [
     path("", include("hello.urls")),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += staticfiles_urlpatterns() # Lab 2 - Add static files URL patterns to serve static files during development
