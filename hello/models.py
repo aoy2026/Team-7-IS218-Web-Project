@@ -19,8 +19,9 @@ class Feedback(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='feedback')
     ratings = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
     comments = models.TextField()
-    submitted_at = models.DateTimeField(auto_now_add=True)
+    submitted_at = models.DateTimeField(auto_now_add=True) 
 
 #Returns String of data present in Feedback model.
     def __str__(self):
         return f"Rating {self.ratings}/5 for {self.product.name}"
+

@@ -13,6 +13,9 @@
             <a href="{% url 'DrinkList' %}" class="navbar-item {% if request.resolver_match.url_name == 'DrinkList' %}active{% endif %}">Drink List</a>
             <a href="{% url 'DrinkInformation' %}" class="navbar-item {% if request.resolver_match.url_name == 'DrinkInformation' %}active{% endif %}">Drink Information</a>
             <a href="{% url 'Feedback' 1 %}" class="navbar-item {% if request.resolver_match.url_name == 'Feedback' %}active{% endif %}">Feedback</a>
+            {% if user.is_authenticated and user.is_superuser %}
+                <a href="{% url 'admin_feedback' %}">Admin Panel</a>
+            {% endif %}
         </div>
         
         <div class="body-content">

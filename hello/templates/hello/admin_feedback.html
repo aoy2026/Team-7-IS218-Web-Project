@@ -1,0 +1,15 @@
+<h1>Admin Feedback Report</h1>
+
+<div style="display: flex; flex-direction: column; gap: 15px; max-width: 800px;">
+
+    <!-- Example loop -->
+    {% for feedback in feedbacks %}
+    <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+        <p><strong>Rating:</strong> {{ feedback.ratings }}</p>
+        <p><strong>Comment:</strong> {{ feedback.comments }}</p>
+        <p><strong>Submitted:</strong> {{ feedback.submitted_at }}</p>
+    
+    </div>
+    {% endfor %}
+
+</div>

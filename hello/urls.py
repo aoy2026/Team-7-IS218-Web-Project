@@ -8,5 +8,5 @@ urlpatterns = [
     path("DrinkList/", views.DrinkList, name="DrinkList"), # Lab 2 - Add a URL pattern for the about view
     path("DrinkInformation/", views.DrinkInformation, name="DrinkInformation"), # Lab 2 - Add a URL pattern for the contact view
     path("Feedback/<int:product_id>/", views.product_feedback, name="Feedback"),#Lab 3 - Add a URL pattern for the product_feedback view that captures an integer parameter called product_id
-    
+    path('admin-feedback/', views.admin_feedback, name='admin_feedback')
 ]

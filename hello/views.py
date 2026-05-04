@@ -29,6 +29,16 @@ def hello_there(request, name):
     print(request.build_absolute_uri()) # optional - prints the full URL of the request to the console for debugging purposes
     return render(request, 'hello/hello_there.html', {'name': name, 'date': datetime.now()})
 
+def admin_feedback(request):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect('home')
+
+    feedbacks = Feedback.objects.all().order_by('-submitted_at')
+
+    return render(request, 'hello/admin_feedback.html', {
+        'feedbacks': feedbacks
+    })
+
 
 #Lab 3 Feeedback System Stuff:
 def product_feedback(request, product_id):

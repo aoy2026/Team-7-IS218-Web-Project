@@ -9,3 +9,4 @@ from hello.models import Product, Feedback
 admin.site.register(Product)
 admin.site.register(Feedback)
 
+
